@@ -1,4 +1,4 @@
-<section id="Contact" class="contactForm hide">
+<section id="contact" class="contactForm hide">
     <div class="contact-box" >
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact_header.png" alt="formulaire de contact">
         <?php

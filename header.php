@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mota Photo</title>
     <?php wp_head(); ?>
 </head>
 
@@ -11,7 +10,7 @@
 <header class="site-header">
     <div class="logo-nav">
         <div class="logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo Nathalie Mota" />
+            <?php the_custom_logo(); ?>
         </div>
         <div class="menu">
             <?php
@@ -29,4 +28,6 @@
         </div>
     </div>
 </header>
+<main>
+
 
