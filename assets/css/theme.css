@@ -1,8 +1,37 @@
+/* @font-face pour l'implentation des polices */
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../fonts/SpaceMono/SpaceMono-Regular.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Space Mono';
+    src: url('../fonts/Space Mono/SpaceMono-Italic.woff2') format('woff2');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
 body {
     background: #fff;
     margin: 0 auto;
     max-width: 1440px;
-    font-family: "Space Mono", sans-serif;
+    font-family: 'Space Mono', sans-serif;
 }
 
 /* CSS du Header */
@@ -63,6 +92,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 86px;
+    border-top: 1px black solid;
 }
   
 .menu-footer-menu-container li {
@@ -106,6 +136,7 @@ header {
 .contact-box form{
     width: 263px;
     font-family: 'Poppins';
+    padding-top: 50px;
 }
 
 .contact-box p{
@@ -118,6 +149,7 @@ header {
 .contact-box label{
     font-size: 12px;
     font-weight: 500;
+    padding-bottom: 2px;
 }
 
 .contact-box input, .contact-box textarea{
