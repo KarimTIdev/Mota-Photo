@@ -7,7 +7,7 @@ add_action('wp_enqueue_scripts', 'theme_enqueue_style');
 
 function mota_js() {
     wp_enqueue_script('theme-script', get_theme_file_uri() . '/assets/js/script.js', array('jquery'), time(), true);
-    wp_enqueue_script('AffichageMiniatureJS', get_theme_file_uri() . '/assets/js/AffichageMiniature.js', array('jquery'), time(), true);
+    wp_enqueue_script('thumbnail', get_theme_file_uri() . '/assets/js/thumbnail.js', array('jquery'), time(), true);
 }
 add_action( 'wp_enqueue_scripts', 'mota_js' );
 
