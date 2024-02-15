@@ -1,4 +1,4 @@
-/* ---------------------------------------------------@font-face pour l'implentation des polices--------------------------------------------------- */
+/* ---------------------------------------------------@FONT-FACE POUR L'IMPLENTATION DES POLICES--------------------------------------------------- */
 
 @font-face {
     font-family: "PoppinsBold";
@@ -57,7 +57,7 @@
     font-display: swap;
 }
 
-/* ------------------------------------------------------Keyframes------------------------------------------------------ */
+/* ------------------------------------------------------KEYFRAMES------------------------------------------------------ */
 
 @keyframes AnimationVersBas {
     0% {
@@ -92,7 +92,7 @@
     }
 }
 
-/* ------------------------------------------------------CSS du <body>------------------------------------------------------ */
+/* ------------------------------------------------------CSS DU <BODY>------------------------------------------------------ */
 
 body {
     background: #fff;
@@ -121,11 +121,11 @@ h3 {
 
 p {
     margin-bottom: 15 px;
-    font-family: PoppinsRegular, sans-serif;
+    font-family: space_monoregular, sans-serif;
     font-size: 14px;
 }
 
-/* ------------------------------------------------------CSS du Header------------------------------------------------------ */
+/* ------------------------------------------------------CSS DU HEADER------------------------------------------------------ */
 
 header {
     width: 1444px;
@@ -175,7 +175,7 @@ header {
 }
   
 
-/*  ------------------------------------------------------CSS du Footer------------------------------------------------------ */
+/*  ------------------------------------------------------CSS DU FOOTER------------------------------------------------------ */
 
 .menu-footer-menu-container ul {
     display: flex;
@@ -198,7 +198,7 @@ header {
     font-size: 16px;
 }
 
-/* ------------------------------------------------------CSS de la modale------------------------------------------------------ */
+/* ------------------------------------------------------CSS DE LA MODALE------------------------------------------------------ */
 
 #contact{
     position: absolute;
@@ -223,6 +223,7 @@ header {
     flex-direction: column;
     align-items: center;
     overflow: hidden;
+    z-index: 2;
 }
 
 .contact-box form{
@@ -268,7 +269,9 @@ header {
     font-family: space_monoregular;
 }
 
-/* ------------------------------------------------------CSS de la page "front-page.php"------------------------------------------------------ */
+/* ------------------------------------------------------CSS DE LA PAGE "FRONT-PAGE.PHP"------------------------------------------------------ */
+
+/* ----------- Hero header ----------- */
 
 .hero-header {
     height: 900px;
@@ -304,7 +307,7 @@ h1 {
     font-family: space_mono_italic, sans-serif;
     font-style: italic;
     font-weight: 700;
-    font-size: 3vw;
+    font-size: 2.5vw;
     line-height: 10vh;
     text-transform: uppercase;
     color: transparent;
@@ -319,8 +322,45 @@ h1 {
     }
 }
 
+/* ----------- Block Photo Ajax ----------- */
 
-/* ------------------------------------------------------CSS de la page "single-photos.php"------------------------------------------------------ */
+.blockCatalogue {
+	display: flex;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+	margin-top: 43px;
+	gap: 10px;
+}
+
+#plusDImage {
+	display: block;
+	position: relative;
+	width: 270px;
+	height: 50px;
+	line-height: 100%;
+	background-color:  #D8D8D8;
+	font-family: space_monoregular;
+	font-weight: 400;
+	font-size: 12px;
+	border-radius: 2px;
+	border: none;
+	margin: 0 auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+
+	&:hover {
+		cursor: pointer;
+		background-color: black;
+		color: white;
+	}
+}
+
+#blockPusdImage{
+	width: 100%;
+}
+
+/* ------------------------------------------------------CSS DE LA PAGE "SINGLE-PHOTO.PHP"------------------------------------------------------ */
 
 .cataloguePhotos {
     display: flex;
@@ -444,7 +484,8 @@ h1 {
 }
 
 .interesser {
-    font-family: space_monoregular;
+    font-family: "PoppinsRegular";
+    font-weight: 300;
     font-size: 14px;
 }
 

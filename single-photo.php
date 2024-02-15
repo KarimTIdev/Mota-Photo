@@ -105,7 +105,7 @@ $nextThumbnailURL = $nextPost ? get_the_post_thumbnail_url($nextPost->ID, 'thumb
 			$compteur++;
 			}
 			if ($compteur ===0) {
-				echo "<p class='photoNotFound'> Aucune photo similaire trouvée pour la catégorie ''" . $categorie_name . "'' </p>"; 
+				echo "<p class='photoNotFound'> Aucune photo similaire trouvée pour la catégorie '" . $categorie_name . "'</p>"; 
 			}
 		}
 		?>
