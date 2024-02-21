@@ -2,15 +2,19 @@
 <?php get_header(); ?>
 
 <?php
+
+// Récupération des champs ACF 
 $photo_url = get_field('photo');
 $reference = get_field('reference');
 $type = get_field('type');
 $year = get_field('annee');
 
+// Récupération des taxonomies
 $categories = get_the_terms(get_the_ID(), 'categorie');
 $formats = get_the_terms(get_the_ID(), 'format');
 $categorie_name = $categories[0]->name;
 
+// Récupération des URL des thumbnails et des posts précédents et suivants
 $nextPost = get_next_post();
 $previousPost = get_previous_post();
 $previousThumbnailURL = $previousPost ? get_the_post_thumbnail_url($previousPost->ID, 'thumbnail') : '';
@@ -76,6 +80,7 @@ $nextThumbnailURL = $nextPost ? get_the_post_thumbnail_url($nextPost->ID, 'thumb
 
 	<div class="PhotoSimilaire">
 		<?php
+		//  On définit les éléments qui seront récupérés en fonction de leur catégories
 		$categories = get_the_terms(get_the_ID(), 'categorie');
 			if ($categories && !is_wp_error($categories)) {
 				$category_ids = wp_list_pluck($categories, 'term_id');
@@ -83,6 +88,7 @@ $nextThumbnailURL = $nextPost ? get_the_post_thumbnail_url($nextPost->ID, 'thumb
 						'post_type' => 'photos',
 						'posts_per_page' => 2,
 						'orderby' => 'rand',
+						// On exclu de la suggestion le post actuel
 						'post__not_in' => array(get_the_ID()),
 						'tax_query' => array(
 								array(
