@@ -42,7 +42,7 @@ function load_more() {
     $paged = $_POST['page'] + 1;
     $query_vars = json_decode(stripslashes($_POST['query']), true);
     $query_vars['paged'] = $paged;
-    $query_vars['posts_per_page'] = 12;
+    $query_vars['posts_per_page'] = 8;
     $query_vars['orderby'] = 'date';
 
     $photos = new WP_Query($query_vars);

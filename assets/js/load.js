@@ -21,8 +21,6 @@
                     button.data('page', button.data('page') + 1);
                     $('#blockPusdImage').before($(data));
                     button.text('Charger plus');
-                } else {
-                    button.text('Plus de photos à charger');
                 }
             }
         });
