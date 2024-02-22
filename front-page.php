@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
+<!-- Block Hero Header -->
 
 <section id="header">
     <div class="hero-header">
         <h1>Photographe event</h1>
         <?php
-        // Séléction d'une photo au hasard dans le CPT 
+        // Séléction d'une photo au hasard dans le CPT 'photos'
         $photo_args = array(
             'post_type' => 'photos',
             'posts_per_page' => 1,
@@ -25,9 +26,37 @@
     </div>
 </section>
 
+<!-- Block Filtres -->
+<section id="filtrePhoto">
+    <?php
+    // Affichage taxonomies
+    $taxonomy = [
+        'categorie' => 'CATÉGORIES',
+        'format' => 'FORMATS',
+        'annee' => 'TRIER PAR',
+    ];
+
+    foreach ($taxonomy as $taxonomy_slug => $label) {
+        $terms = get_terms($taxonomy_slug);
+        if ($terms && !is_wp_error($terms)) {
+
+            echo "<select id='$taxonomy_slug' class='custom-select taxonomy-select'>";
+
+            echo "<option value=''>$label</option>";
+            foreach ($terms as $term) {
+                echo "<option value='$term->slug'>$term->name</option>";
+            }
+            echo "</select>";
+        }
+    }
+    ?>
+</section>
+
+<!-- Block Catalogue -->
+
 <section id="containerPhoto" class="blockCatalogue">
     <?php
-        // Récupération de 8 photos aléatoires pour le bloc initial
+        // On récupère 8 photos aléatoires pour le bloc de départ
         $args = array(
             'post_type' => 'photos',
             'posts_per_page' => 8,
@@ -36,6 +65,7 @@
         );
         $photo_block = new WP_Query($args);
 
+        // On localise le script à executer et son objet
         wp_localize_script('load', 'ajaxloadmore', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
             'query_vars' => json_encode($args)

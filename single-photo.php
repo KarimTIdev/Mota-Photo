@@ -55,12 +55,12 @@ $nextThumbnailURL = $nextPost ? get_the_post_thumbnail_url($nextPost->ID, 'thumb
     		<button id="boutonContact" class="contact-modale" data-reference="<?php echo $reference; ?>">Contact</button>
 		</div>
 
-		<div class="naviguationPhotos">
+		<div class="navigationPhotos">
 			<div class="miniPicture" id="miniPicture">
       	  	<!-- Le thumbnail sera ici -->
       		</div>
 
-      		<div class="naviguationArrow">
+      		<div class="navigationArrow">
       	 		<?php if (!empty($previousPost)) : ?>
       	     		<img class="arrow arrow-left" src="<?php echo get_theme_file_uri() . '/assets/images/left.png'; ?>" alt="Photo précédente" data-thumbnail-url="<?php echo $previousThumbnailURL; ?>" data-target-url="<?php echo esc_url(get_permalink($previousPost->ID)); ?>">
       	 		<?php endif; ?>
