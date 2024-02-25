@@ -1,4 +1,6 @@
     <?php get_template_part("templates_part/modale_contact") ?>
+
+    <?php get_template_part("templates_part/lightbox") ?>
     
     </main>
 

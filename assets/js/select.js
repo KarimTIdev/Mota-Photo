@@ -9,14 +9,14 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($){
-   
+   // Fonction s'occuppant du changement de couleur au survol
     $(".bouton").hover(
         function(){
-            // Fonction exécutée lorsque le survol commence
-            $(this).find("a").css("color", "#fff"); // Changer la couleur de fond à rouge (#ff0000)
+            // Début du survol
+            $(this).find("a").css("color", "#fff"); // Change la couleur de fond à rouge (#ff0000)
         },
         function(){
-            // Fonction exécutée lorsque le survol se termine
+            // Fin du survol
             $(this).find("a").css("color", "#000"); // Rétablir la couleur de fond par défaut
         }
     );

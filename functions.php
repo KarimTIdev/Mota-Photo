@@ -24,10 +24,11 @@ add_action('after_setup_theme', 'mota_setup');
 
 function mota_js() {
    
-    wp_enqueue_script('theme-script', get_theme_file_uri() . '/assets/js/script.js', array('jquery'), time(), true);
+    wp_enqueue_script('modale', get_theme_file_uri() . '/assets/js/modale.js', array('jquery'), time(), true);
     wp_enqueue_script('thumbnail', get_theme_file_uri() . '/assets/js/thumbnail.js', array('jquery'), time(), true);
     wp_enqueue_script('load', get_theme_file_uri() . '/assets/js/load.js', array('jquery'), time(), true);
     wp_enqueue_script('filtres', get_theme_file_uri() . '/assets/js/filtres.js', array('jquery'), time(), true);
+    wp_enqueue_script('lightbox', get_theme_file_uri() . '/assets/js/lightbox.js', array('jquery'), time(), true);
     wp_enqueue_script('select', get_theme_file_uri() . '/assets/js/select.js', array('jquery'), time(), true);
     wp_enqueue_script('select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js', array('jquery'), '4.0.13', true);
     wp_enqueue_style('select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css', array());
