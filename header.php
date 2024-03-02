@@ -8,25 +8,30 @@
 
 <body>
 <header class="site-header">
-    <div class="logo-nav">
-        <div class="logo">
-            <?php the_custom_logo(); ?>
-        </div>
-        <div class="menu">
-            <?php
-            if (has_nav_menu('header-menu')):
-            ?>
-            <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'header-menu',
-                        'menu_class' => 'my-header-menu',
-                    )
-                );
-            ?>
-        <?php endif; ?>
-        </div>
-    </div>
+	<nav id="site-navigation" class="siteNavigation" role="navigation">
+		<div class="logo">
+			<?php the_custom_logo(); ?>
+		</div>
+	
+		<div class="burgerMenu">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		</div>
+								
+		<div class="navigation">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'header-menu',
+					'container'      => 'false',
+					'menu_class'     => 'menuNavigation',
+				)
+            );
+			?>
+		</div>	
+	</nav>
+
 </header>
 <main>
 

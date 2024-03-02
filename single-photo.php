@@ -31,19 +31,12 @@ $nextThumbnailURL = $nextPost ? get_the_post_thumbnail_url($nextPost->ID, 'thumb
 
             <div class="selecteurK">
                 <h2><?php echo get_the_title(); ?></h2>
-                <div  class="taxonomies">
-
-                        <p class="uppercase">RÉFÉRENCE : <span id="single-reference"><?php echo strtoupper($reference) ?></span></p>
-                        <p class="uppercase">CATÉGORIE : <?php foreach ($categories as $key => $cat) {
-                                    $categoryNameSingle = $cat->name;
-                                    echo ($categoryNameSingle);
-                        }  ?></p>
-                        <p class="uppercase">FORMAT : <?php foreach ($formats as $key => $format) {
-                                    $formatName = $format->name;
-                                    echo ($formatName);
-                        } ?></p>
-                        <p class="uppercase">TYPE : <?php echo ($type) ?> </p>
-                        <p class="uppercase">ANNÉE : <?php echo $year ?> </p>
+                <div class="taxonomies">
+                    <p class="uppercase">RÉFÉRENCE : <span id="single-reference"><?php echo strtoupper($reference) ?></span></p>
+                    <p class="uppercase">CATÉGORIE : <?php foreach ($categories as $key => $cat) {$categoryNameSingle = $cat->name; echo ($categoryNameSingle);}  ?></p>
+                    <p class="uppercase">FORMAT : <?php foreach ($formats as $key => $format) {$formatName = $format->name; echo ($formatName);} ?></p>
+                    <p class="uppercase">TYPE : <?php echo ($type) ?> </p>
+					<p class="uppercase">ANNÉE : <?php echo get_the_date('Y'); ?> </p>
                 </div>
             </div>
         </div>

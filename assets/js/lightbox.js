@@ -21,6 +21,7 @@ jQuery(document).ready(function($) {
     function openLightbox(index) {
         updateLightbox(index);
         $lightbox.show();
+        $lightbox.css('display','flex');
     }
 
     function fermetureLightbox() {
@@ -41,7 +42,7 @@ jQuery(document).ready(function($) {
 
     attachEventsToImages();
 
-    $('.fermelightbox').on('click', fermetureLightbox);
+    $('.lightboxFermeture').on('click', fermetureLightbox);
 
     $('.lightboxPrecedent').on('click', function() {
         var $images = $('.fullscreen-icon');

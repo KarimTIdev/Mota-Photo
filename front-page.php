@@ -33,7 +33,6 @@
     $taxonomy = [
         'categorie' => 'CATÉGORIES',
         'format' => 'FORMATS',
-        'annee' => 'TRIER PAR',
     ];
 
     foreach ($taxonomy as $taxonomy_slug => $label) {
@@ -50,6 +49,11 @@
         }
     }
     ?>
+    <select id="annee" class="custom-select taxonomy-select">
+        <option value="DESC">TRIER PAR</option>  
+        <option value="DESC">à partir des plus récentes</option>    
+        <option value="ASC"> à partir des plus anciennes</option>
+    </select>
 </section>
 
 <!-- Block Catalogue -->

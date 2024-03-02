@@ -29,6 +29,7 @@ function mota_js() {
     wp_enqueue_script('load', get_theme_file_uri() . '/assets/js/load.js', array('jquery'), time(), true);
     wp_enqueue_script('filtres', get_theme_file_uri() . '/assets/js/filtres.js', array('jquery'), time(), true);
     wp_enqueue_script('lightbox', get_theme_file_uri() . '/assets/js/lightbox.js', array('jquery'), time(), true);
+    wp_enqueue_script('burger', get_theme_file_uri() . '/assets/js/burger.js', array('jquery'), time(), true);
     wp_enqueue_script('select', get_theme_file_uri() . '/assets/js/select.js', array('jquery'), time(), true);
     wp_enqueue_script('select2-js', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js', array('jquery'), '4.0.13', true);
     wp_enqueue_style('select2-css', 'https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css', array());
@@ -83,6 +84,8 @@ function filter_photos_function(){
     $args = array(
         'post_type' => 'photos',
         'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => $filter['annee'],
         'tax_query' => array(
             'relation' => 'AND',
         )
@@ -102,14 +105,6 @@ function filter_photos_function(){
             'taxonomy' => 'format',
             'field'    => 'slug',
             'terms'    => $filter['format'],
-        );
-    }
-
-    if(!empty($filter['annee'])){
-        $args['tax_query'][] = array(
-            'taxonomy' => 'annee',
-            'field'    => 'slug',
-            'terms'    => $filter['annee'],
         );
     }
 
